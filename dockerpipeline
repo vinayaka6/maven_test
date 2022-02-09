@@ -1,0 +1,39 @@
+pipeline
+{
+    agent any
+    stages
+    {
+        stage('ContinuousDownload')
+        {
+            steps
+            {
+                git 'https://github.com/intelliqittrainings/maven.git'
+            }
+        }
+        stage('ContinuousBuild')
+        {
+            steps
+            {
+              sh label: '', script: 'mvn package'
+            }
+        stage('Dockerize')
+        {
+            steps
+            {
+              sh docker build -t imagename:tag
+            }
+        stage('Tagging')
+        {
+            steps
+            {
+              sh docker tag imagename:tag  namespace:repositoryname
+            }
+        stage('Push')
+        {
+            steps
+            {
+              sh loggin -u user -p ** 
+              sh docker push namespace:repositoryname
+            }
+                
+        }
