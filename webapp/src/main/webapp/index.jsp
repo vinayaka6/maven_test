@@ -1,6 +1,6 @@
 <html>
 <body>
-<h1>WELCOME TO DEVOPS ONLINE CLASS</h1>
+<h1>JENKINS</h1>
 </body>
 <body style="color:red;">
  <div class="container">
