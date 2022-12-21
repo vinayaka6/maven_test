@@ -1,8 +1,8 @@
 <html>
 <body>
-<h1>JENKINS CLASSES</h1>
+<h1>DEVOPS CLASSES</h1>
 </body>
-<body style="color:red;">
+<body style="color:blue;">
  <div class="container">
     <label for="uname"><b>Username:    </b></label>
     <input type="text" placeholder="Enter Username" name="uname" required>
