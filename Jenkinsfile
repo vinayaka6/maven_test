@@ -1,6 +1,14 @@
 pipeline
 {
     agent { label 'master' }
+    tools
+    {
+        maven 'dev'
+    } 
+    environment
+    {
+      TOMCAT_PATH = "/usr/share/tomcat/webapps"
+    }
     stages
     {
         stage('continuous download')
@@ -48,7 +56,7 @@ pipeline
                {
                  try 
                  {
-                     deploy adapters: [tomcat9(credentialsId: '212218ef-3936-4650-9659-6d1a636b1c10', path: '', url: 'http://172.31.36.158:8080/')], contextPath: 'testapp', war: '**/*.war'
+                     deploy adapters: [tomcat9(credentialsId: 'tomcat', path: '', url: 'http://172.31.40.147:8080/')], contextPath: 'testapp', war: '**/*.war'
                  }
                  catch(Exception e3)
                  {
@@ -82,7 +90,7 @@ pipeline
         {
             steps
             {
-                deploy adapters: [tomcat9(credentialsId: '212218ef-3936-4650-9659-6d1a636b1c10', path: '', url: 'http://172.31.36.158:8080/')], contextPath: 'prod', war: '**/*.war'
+                deploy adapters: [tomcat9(credentialsId: 'tomcat', path: '', url: 'http://172.31.40.147:8080/')], contextPath: 'prod', war: '**/*.war'
             }
         }
 
