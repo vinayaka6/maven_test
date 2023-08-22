@@ -1,6 +1,6 @@
 <html>
 <body>
-<h1>DEVOPS CLASSES</h1>
+<h1>JENKINS CLASSES</h1>
 </body>
 <body style="color:blue;">
  <div class="container">
